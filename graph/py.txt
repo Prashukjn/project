@@ -1,0 +1,81 @@
+adjacency_lst = {}
+mylst = []
+
+def graph_node(node):
+  if node not in mylst:
+    mylst.append(node)
+  else:
+    print("The given node exists")
+ 
+def graph_edge(node1, node2):
+  temp = []
+  if node1 in mylst and node2 in mylst:
+    if node1 not in adjacency_lst:
+      temp.append(node2)
+      adjacency_lst[node1] = temp
+   
+    elif node1 in adjacency_lst:
+      temp.extend(adjacency_lst[node1])
+      temp.append(node2)
+      adjacency_lst[node1] = temp
+       
+  else:
+    print("The given node does not exist")
+ 
+def disp_graph():
+  for node in adjacency_lst:
+    print(node, " -> ", [i for i in adjacency_lst[node]])
+ 
+graph_node('a')
+graph_node('b')
+graph_node('c')
+graph_node('d')
+graph_edge('a','b')
+graph_edge('b','c')
+graph_edge('c','d')
+graph_edge('d','a')
+disp_graph()
+print(adjacency_lst)
+
+link:  https://www.delftstack.com/howto/python/graphs-in-python/
+
+_________________________________________________________________________________________
+
+adjacency_lst = {}
+mylst = []
+
+def graph_node(node):
+  if node not in mylst:
+    mylst.append(node)
+  else:
+    print("The given node exists")
+ 
+def graph_edge(node1, node2):
+  temp = []
+  if node1 in mylst and node2 in mylst:
+    if node1 not in adjacency_lst:
+      temp.append(node2)
+      adjacency_lst[node1] = temp
+   
+    elif node1 in adjacency_lst:
+      temp.extend(adjacency_lst[node1])
+      temp.append(node2)
+      adjacency_lst[node1] = temp
+       
+  else:
+    print("The given node does not exist")
+ 
+def disp_graph():
+  for node in adjacency_lst:
+    print(node, " -> ", [i for i in adjacency_lst[node]])
+ 
+graph_node('e')
+graph_node('f')
+graph_node('g')
+graph_node('h')
+graph_edge('e','f')
+graph_edge('f','g')
+graph_edge('g','h')
+graph_edge('h','e')
+disp_graph()
+print(adjacency_lst)
